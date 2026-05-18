@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">初回基板Bring-upの確認フロー</title>
+  <desc id="desc">電源投入前からセンサー確認までの順序と見えない電気を見える化する測定ポイント</desc>
+  <defs>
+    <style>
+      .bg{fill:#f7f7f4}.title{font:700 54px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#171717}.sub{font:400 24px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#60666d}.step{fill:#fff;stroke:#d8ddd7;stroke-width:3}.num{fill:#1f6b57}.numText{font:800 24px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#fff}.head{font:700 26px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#171717}.body{font:400 19px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#465057}.arrow{stroke:#1f6b57;stroke-width:7;fill:none;stroke-linecap:round}.stop{fill:#fff0f0;stroke:#d64545;stroke-width:3}.stopText{font:700 24px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#8a2525}
+    </style>
+    <marker id="arrowhead" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto"><path d="M0 0L12 7L0 14z" fill="#1f6b57"/></marker>
+  </defs>
+  <rect class="bg" width="1600" height="900"/>
+  <text class="title" x="80" y="95">初回基板は、いきなり電源を入れない</text>
+  <text class="sub" x="82" y="142">Bring-upは「壊さない順番」で進める。異常電流が出たら止めて原因を探す。</text>
+
+  <g transform="translate(90,230)">
+    <rect class="step" width="285" height="170" rx="22"/><circle class="num" cx="42" cy="42" r="25"/><text class="numText" x="35" y="51">1</text>
+    <text class="head" x="82" y="52">目視確認</text><text class="body" x="36" y="105">部品向き / はんだ</text><text class="body" x="36" y="138">ショートを探す</text>
+  </g>
+  <path class="arrow" d="M390 315 H475" marker-end="url(#arrowhead)"/>
+  <g transform="translate(500,230)">
+    <rect class="step" width="285" height="170" rx="22"/><circle class="num" cx="42" cy="42" r="25"/><text class="numText" x="35" y="51">2</text>
+    <text class="head" x="82" y="52">抵抗確認</text><text class="body" x="36" y="105">3.3VとGND間</text><text class="body" x="36" y="138">0Ωなら止める</text>
+  </g>
+  <path class="arrow" d="M800 315 H885" marker-end="url(#arrowhead)"/>
+  <g transform="translate(910,230)">
+    <rect class="step" width="285" height="170" rx="22"/><circle class="num" cx="42" cy="42" r="25"/><text class="numText" x="35" y="51">3</text>
+    <text class="head" x="82" y="52">電流制限</text><text class="body" x="36" y="105">低めに設定</text><text class="body" x="36" y="138">異常なら即OFF</text>
+  </g>
+  <path class="arrow" d="M1210 315 H1295" marker-end="url(#arrowhead)"/>
+  <g transform="translate(1320,230)">
+    <rect class="step" width="210" height="170" rx="22"/><circle class="num" cx="42" cy="42" r="25"/><text class="numText" x="35" y="51">4</text>
+    <text class="head" x="82" y="52">電圧測定</text><text class="body" x="36" y="105">3.3V / 5V</text><text class="body" x="36" y="138">安定を見る</text>
+  </g>
+
+  <path class="arrow" d="M1425 410 V505 H270 V545" marker-end="url(#arrowhead)"/>
+  <g transform="translate(90,565)">
+    <rect class="step" width="285" height="170" rx="22"/><circle class="num" cx="42" cy="42" r="25"/><text class="numText" x="35" y="51">5</text>
+    <text class="head" x="82" y="52">USB認識</text><text class="body" x="36" y="105">ポート名</text><text class="body" x="36" y="138">書き込み確認</text>
+  </g>
+  <path class="arrow" d="M390 650 H475" marker-end="url(#arrowhead)"/>
+  <g transform="translate(500,565)">
+    <rect class="step" width="285" height="170" rx="22"/><circle class="num" cx="42" cy="42" r="25"/><text class="numText" x="35" y="51">6</text>
+    <text class="head" x="82" y="52">UARTログ</text><text class="body" x="36" y="105">baud rate</text><text class="body" x="36" y="138">起動ログを見る</text>
+  </g>
+  <path class="arrow" d="M800 650 H885" marker-end="url(#arrowhead)"/>
+  <g transform="translate(910,565)">
+    <rect class="step" width="285" height="170" rx="22"/><circle class="num" cx="42" cy="42" r="25"/><text class="numText" x="35" y="51">7</text>
+    <text class="head" x="82" y="52">I2C確認</text><text class="body" x="36" y="105">SDA / SCL</text><text class="body" x="36" y="138">ACKを見る</text>
+  </g>
+  <path class="arrow" d="M1210 650 H1295" marker-end="url(#arrowhead)"/>
+  <g transform="translate(1320,565)">
+    <rect class="step" width="210" height="170" rx="22"/><circle class="num" cx="42" cy="42" r="25"/><text class="numText" x="35" y="51">8</text>
+    <text class="head" x="82" y="52">通信</text><text class="body" x="36" y="105">Wi-Fi</text><text class="body" x="36" y="138">API / MQTT</text>
+  </g>
+
+  <rect class="stop" x="300" y="790" width="1000" height="70" rx="22"/>
+  <text class="stopText" x="340" y="835">電流が想定より大きい、電圧が出ない、ICが熱い。この3つは進まず止める。</text>
+</svg>

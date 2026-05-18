@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Ubuntuサーバー設定マップ</title>
+  <desc id="desc">ESP32からUbuntuサーバーにデータを送るときの設定項目と確認ポイント</desc>
+  <defs>
+    <style>
+      .bg{fill:#f7f9fc}.title{font:700 54px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#17202a}.sub{font:400 24px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#526273}.box{fill:#fff;stroke:#d6e1ea;stroke-width:3}.head{font:700 30px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#17202a}.body{font:400 21px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#465463}.mono{font:700 20px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#1f2933}.arrow{stroke:#2f7f8f;stroke-width:8;fill:none;stroke-linecap:round}.pill{fill:#e7f4f0;stroke:#1f8a6a;stroke-width:3}.warn{fill:#fff4e5;stroke:#e8b85c;stroke-width:3}.warnText{font:700 23px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#684a12}
+    </style>
+    <marker id="arrowhead" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto"><path d="M0 0L12 7L0 14z" fill="#2f7f8f"/></marker>
+  </defs>
+  <rect class="bg" width="1600" height="900"/>
+  <text class="title" x="80" y="95">Ubuntuサーバー側で迷うのは「設定値の住所合わせ」</text>
+  <text class="sub" x="82" y="142">ESP32、Docker、DB、可視化ツールが同じ宛先とポートを見ているかを確認する。</text>
+
+  <rect class="box" x="80" y="235" width="300" height="300" rx="24"/>
+  <text class="head" x="120" y="295">ESP32</text>
+  <text class="body" x="120" y="350">Wi-Fi接続</text>
+  <text class="mono" x="120" y="392">SSID</text>
+  <text class="mono" x="120" y="432">PASSWORD</text>
+  <text class="mono" x="120" y="472">SERVER_URL</text>
+
+  <path class="arrow" d="M400 385 H520" marker-end="url(#arrowhead)"/>
+
+  <rect class="box" x="560" y="235" width="360" height="300" rx="24"/>
+  <text class="head" x="600" y="295">Docker Compose</text>
+  <text class="body" x="600" y="350">API / MQTT / DBを起動</text>
+  <text class="mono" x="600" y="392">ports: 1883, 3000</text>
+  <text class="mono" x="600" y="432">POSTGRES_URL</text>
+  <text class="mono" x="600" y="472">GRAFANA_URL</text>
+
+  <path class="arrow" d="M940 385 H1060" marker-end="url(#arrowhead)"/>
+
+  <rect class="box" x="1100" y="235" width="360" height="300" rx="24"/>
+  <text class="head" x="1140" y="295">ログ保存 / 可視化</text>
+  <text class="body" x="1140" y="350">Postgresに保存</text>
+  <text class="body" x="1140" y="390">Grafanaで見る</text>
+  <text class="mono" x="1140" y="432">device_id</text>
+  <text class="mono" x="1140" y="472">timestamp / value</text>
+
+  <rect class="pill" x="190" y="610" width="310" height="82" rx="20"/>
+  <text class="head" x="225" y="662">1. 同じWi-Fiか</text>
+  <rect class="pill" x="555" y="610" width="310" height="82" rx="20"/>
+  <text class="head" x="590" y="662">2. IPが合うか</text>
+  <rect class="pill" x="920" y="610" width="310" height="82" rx="20"/>
+  <text class="head" x="955" y="662">3. ポートが開くか</text>
+
+  <rect class="warn" x="205" y="740" width="1190" height="95" rx="24"/>
+  <text class="warnText" x="245" y="798">つまずく場所: IPアドレス変更、ファイアウォール、Dockerのポート公開、MQTT topic名、時刻同期</text>
+</svg>

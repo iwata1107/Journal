@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">初心者がつまずく接続と設定ポイント</title>
+  <desc id="desc">ハードウェア開発で初心者が詰まりやすい電源、信号、USB、Wi-Fi、Docker、製造データの一覧</desc>
+  <defs>
+    <style>
+      .bg{fill:#fbfaf7}.title{font:700 54px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#17202a}.sub{font:400 24px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#526273}.card{fill:#fff;stroke:#ddd6ca;stroke-width:3}.head{font:700 29px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#17202a}.body{font:400 21px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#465463}.tag{font:700 18px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#fff}.icon{fill:#2f7f8f}.bad{fill:#d64545}.ok{fill:#1f8a6a}
+    </style>
+  </defs>
+  <rect class="bg" width="1600" height="900"/>
+  <text class="title" x="80" y="95">「分からない」は、だいたいこの6箇所で起きる</text>
+  <text class="sub" x="82" y="142">詰まったら、問題を感覚で探さず、どのレイヤーで止まっているかを分ける。</text>
+
+  <g transform="translate(95,220)">
+    <rect class="card" width="440" height="175" rx="24"/><circle class="icon" cx="50" cy="50" r="26"/><text class="tag" x="42" y="57">1</text>
+    <text class="head" x="95" y="60">電源</text><text class="body" x="40" y="112">3.3V / 5Vを混ぜる</text><text class="body" x="40" y="145">GNDが共通になっていない</text>
+  </g>
+  <g transform="translate(580,220)">
+    <rect class="card" width="440" height="175" rx="24"/><circle class="icon" cx="50" cy="50" r="26"/><text class="tag" x="42" y="57">2</text>
+    <text class="head" x="95" y="60">信号線</text><text class="body" x="40" y="112">SDA/SCL、TX/RXを逆にする</text><text class="body" x="40" y="145">プルアップがない</text>
+  </g>
+  <g transform="translate(1065,220)">
+    <rect class="card" width="440" height="175" rx="24"/><circle class="icon" cx="50" cy="50" r="26"/><text class="tag" x="42" y="57">3</text>
+    <text class="head" x="95" y="60">USB / 書き込み</text><text class="body" x="40" y="112">ポート名、権限、ドライバ</text><text class="body" x="40" y="145">bootボタンのタイミング</text>
+  </g>
+
+  <g transform="translate(95,465)">
+    <rect class="card" width="440" height="175" rx="24"/><circle class="icon" cx="50" cy="50" r="26"/><text class="tag" x="42" y="57">4</text>
+    <text class="head" x="95" y="60">ネットワーク</text><text class="body" x="40" y="112">SSID、IP、DNS、Firewall</text><text class="body" x="40" y="145">同じLANにいない</text>
+  </g>
+  <g transform="translate(580,465)">
+    <rect class="card" width="440" height="175" rx="24"/><circle class="icon" cx="50" cy="50" r="26"/><text class="tag" x="42" y="57">5</text>
+    <text class="head" x="95" y="60">サーバー設定</text><text class="body" x="40" y="112">Dockerのポート公開</text><text class="body" x="40" y="145">API URLとMQTT topic</text>
+  </g>
+  <g transform="translate(1065,465)">
+    <rect class="card" width="440" height="175" rx="24"/><circle class="icon" cx="50" cy="50" r="26"/><text class="tag" x="42" y="57">6</text>
+    <text class="head" x="95" y="60">製造データ</text><text class="body" x="40" y="112">BOM/CPLの名前ズレ</text><text class="body" x="40" y="145">部品向き、在庫、外形</text>
+  </g>
+
+  <rect x="210" y="725" width="1180" height="90" rx="26" fill="#e7f4f0" stroke="#1f8a6a" stroke-width="3"/>
+  <text class="head" x="250" y="782">対処: 「どの層で止まったか」をログ、測定器、チェックリストで一つずつ切り分ける。</text>
+</svg>

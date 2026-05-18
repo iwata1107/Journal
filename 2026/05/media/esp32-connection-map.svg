@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">ESP32センサーロガーの接続図</title>
+  <desc id="desc">ESP32、センサー、LED、USB、Wi-Fi、Ubuntuサーバーの接続と初心者が間違いやすい点</desc>
+  <defs>
+    <style>
+      .bg{fill:#f6f8fb}.title{font:700 54px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#17202a}.sub{font:400 24px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#526273}.box{fill:#fff;stroke:#d5e0ea;stroke-width:3}.device{fill:#eff7f4;stroke:#1f8a6a;stroke-width:4}.sensor{fill:#fff6df;stroke:#e0a42f;stroke-width:4}.server{fill:#eef3ff;stroke:#4f73c9;stroke-width:4}.label{font:700 28px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#17202a}.body{font:400 21px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#465463}.pin{font:700 19px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#1f2933}.warn{fill:#fff4e5;stroke:#e8b85c;stroke-width:3}.warnText{font:700 22px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#684a12}.wire{stroke-width:8;fill:none;stroke-linecap:round;stroke-linejoin:round}.red{stroke:#d64545}.black{stroke:#20252b}.blue{stroke:#2f80ed}.yellow{stroke:#e0a42f}.green{stroke:#1f8a6a}.arrow{stroke:#2f7f8f;stroke-width:7;fill:none;stroke-linecap:round}.small{font:600 18px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#526273}
+    </style>
+    <marker id="arrowhead" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto"><path d="M0 0L12 7L0 14z" fill="#2f7f8f"/></marker>
+  </defs>
+  <rect class="bg" width="1600" height="900"/>
+  <text class="title" x="80" y="92">ESP32センサーロガー: 最初に迷う接続</text>
+  <text class="sub" x="82" y="140">まずは「USBで書き込む」「センサーを読む」「Wi-Fiでサーバーへ送る」の3本だけを見る。</text>
+
+  <rect class="box" x="80" y="205" width="360" height="210" rx="24"/>
+  <text class="label" x="120" y="270">PC / VS Code</text>
+  <text class="body" x="120" y="315">PlatformIO / Arduino</text>
+  <text class="body" x="120" y="352">シリアルモニタ</text>
+  <text class="pin" x="120" y="388">USB: 書き込み + ログ</text>
+
+  <rect class="device" x="585" y="210" width="430" height="340" rx="26"/>
+  <text class="label" x="635" y="270">ESP32開発ボード</text>
+  <rect x="635" y="315" width="145" height="62" rx="10" fill="#25313b"/>
+  <rect x="825" y="315" width="145" height="62" rx="10" fill="#25313b"/>
+  <text class="pin" x="652" y="353" fill="#fff">GPIO21</text>
+  <text class="pin" x="844" y="353" fill="#fff">GPIO22</text>
+  <text class="pin" x="635" y="425">3V3</text>
+  <text class="pin" x="635" y="465">GND</text>
+  <text class="pin" x="825" y="425">SDA</text>
+  <text class="pin" x="825" y="465">SCL</text>
+  <text class="body" x="635" y="512">最初は3.3V系で統一する</text>
+
+  <rect class="sensor" x="1160" y="245" width="300" height="185" rx="24"/>
+  <text class="label" x="1200" y="305">I2Cセンサー</text>
+  <text class="pin" x="1200" y="352">VCC / GND</text>
+  <text class="pin" x="1200" y="388">SDA / SCL</text>
+
+  <rect class="sensor" x="1160" y="500" width="300" height="145" rx="24"/>
+  <text class="label" x="1200" y="560">LED + 抵抗</text>
+  <text class="body" x="1200" y="606">向きと抵抗値を見る</text>
+
+  <rect class="server" x="590" y="670" width="420" height="145" rx="24"/>
+  <text class="label" x="635" y="730">Ubuntuサーバー</text>
+  <text class="body" x="635" y="775">HTTP / MQTTでログ保存</text>
+
+  <path class="wire blue" d="M440 310 C500 310 525 318 585 330"/>
+  <text class="small" x="465" y="288">USB</text>
+  <path class="wire red" d="M760 425 C910 425 1010 270 1160 325"/>
+  <path class="wire black" d="M760 465 C930 480 1015 390 1160 370"/>
+  <path class="wire blue" d="M905 425 C995 420 1045 390 1160 390"/>
+  <path class="wire yellow" d="M905 465 C1000 475 1060 420 1160 410"/>
+  <path class="wire green" d="M970 465 C1065 545 1100 560 1160 575"/>
+  <path class="arrow" d="M790 550 V660" marker-end="url(#arrowhead)"/>
+  <text class="small" x="815" y="620">Wi-Fi</text>
+
+  <rect class="warn" x="90" y="675" width="420" height="145" rx="24"/>
+  <text class="warnText" x="125" y="725">ここで詰まりやすい</text>
+  <text class="body" x="125" y="765">GNDを共通にする / 5Vを入れない</text>
+  <text class="body" x="125" y="800">SDAとSCLを逆にしない</text>
+
+  <rect class="warn" x="1080" y="690" width="400" height="120" rx="24"/>
+  <text class="warnText" x="1115" y="740">設定で詰まる点</text>
+  <text class="body" x="1115" y="780">SSID、パスワード、送信先URL</text>
+</svg>

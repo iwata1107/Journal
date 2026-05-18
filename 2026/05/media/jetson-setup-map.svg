@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Jetsonセットアップの接続と設定</title>
+  <desc id="desc">Jetson風開発キットでカメラ、電源、ネットワーク、JetPack、Docker、推論ログを確認する流れ</desc>
+  <defs>
+    <style>
+      .bg{fill:#f6f8f7}.title{font:700 54px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#17202a}.sub{font:400 24px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#526273}.card{fill:#fff;stroke:#d4dee5;stroke-width:3}.head{font:700 29px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#17202a}.body{font:400 21px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#465463}.mono{font:700 19px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#1f2933}.arrow{stroke:#2f7f8f;stroke-width:8;fill:none;stroke-linecap:round}.warn{fill:#fff4e5;stroke:#e8b85c;stroke-width:3}.warnText{font:700 23px -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;fill:#684a12}
+    </style>
+    <marker id="arrowhead" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto"><path d="M0 0L12 7L0 14z" fill="#2f7f8f"/></marker>
+  </defs>
+  <rect class="bg" width="1600" height="900"/>
+  <text class="title" x="80" y="95">Jetsonは「基板」ではなく、ソフト込みの小型AI PCとして扱う</text>
+  <text class="sub" x="82" y="142">最初は独自キャリアボードではなく、公式開発キットでI/O、温度、電源、ログを確認する。</text>
+
+  <rect class="card" x="80" y="230" width="285" height="245" rx="24"/>
+  <text class="head" x="120" y="290">1. OSを入れる</text>
+  <text class="body" x="120" y="342">JetPackを書き込む</text>
+  <text class="mono" x="120" y="385">SD / NVMe</text>
+  <text class="body" x="120" y="430">バージョンを記録</text>
+
+  <path class="arrow" d="M390 355 H490" marker-end="url(#arrowhead)"/>
+
+  <rect class="card" x="520" y="230" width="285" height="245" rx="24"/>
+  <text class="head" x="560" y="290">2. 物理接続</text>
+  <text class="body" x="560" y="342">電源 / カメラ</text>
+  <text class="body" x="560" y="382">HDMI / Ethernet</text>
+  <text class="body" x="560" y="422">USB周辺機器</text>
+
+  <path class="arrow" d="M830 355 H930" marker-end="url(#arrowhead)"/>
+
+  <rect class="card" x="960" y="230" width="285" height="245" rx="24"/>
+  <text class="head" x="1000" y="290">3. 環境固定</text>
+  <text class="body" x="1000" y="342">Dockerで動かす</text>
+  <text class="mono" x="1000" y="385">CUDA / TensorRT</text>
+  <text class="body" x="1000" y="430">依存関係を固定</text>
+
+  <path class="arrow" d="M1270 355 H1370" marker-end="url(#arrowhead)"/>
+
+  <rect class="card" x="1185" y="575" width="335" height="210" rx="24"/>
+  <text class="head" x="1225" y="635">4. 推論ログ</text>
+  <text class="body" x="1225" y="687">FPS / 温度 / 電力</text>
+  <text class="body" x="1225" y="728">メモリ / エラー</text>
+
+  <path class="arrow" d="M1395 475 V555" marker-end="url(#arrowhead)"/>
+
+  <rect class="warn" x="105" y="590" width="900" height="175" rx="24"/>
+  <text class="warnText" x="145" y="645">ここで詰まりやすい</text>
+  <text class="body" x="145" y="690">電源容量が足りない / カメラの向きが逆 / JetPackとDockerイメージの不一致</text>
+  <text class="body" x="145" y="730">冷却不足で遅くなる / Python環境を直接汚して再現できなくなる</text>
+</svg>
